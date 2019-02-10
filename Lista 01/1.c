@@ -27,16 +27,15 @@ int main(int argc, char const *argv[])
     }
 
     //Pesquisa sequencial do vetor C
-    scanf("Digite o valor a ser pesquisado: %d\n", &valorPesquisado);
+    printf("Digite o valor a ser pesquisado: ");
+    scanf("%d", &valorPesquisado);
+    //valorPesquisado = 5;
     for(int i = 0; i < 50; i++)
     {
         if (valorPesquisado == vetC[i]) {
             printf("Número encontrado!\n");
-            printf("O número está na posição: %d", i);
+            printf("O número está na posição: %d\n", i);
             flag = 1;
-        }else
-        {
-            printf("[%d]", vetC[i]);
         }
     }
 
