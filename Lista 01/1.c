@@ -12,6 +12,8 @@ int main(int argc, char const *argv[])
     int vetA[25] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
     int vetB[25] = {111,211,31,41,51,61,71,181,92,150,151,152,153,164,165,166,167,168,269,620,261,221,231,241,251};
     int vetC[50];
+    int valorPesquisado;
+    int flag = 0;
 
     //Popular o vetor C com os vetores A e B
     for(int i = 0; i < 50; i++)
@@ -25,10 +27,23 @@ int main(int argc, char const *argv[])
     }
 
     //Pesquisa sequencial do vetor C
+    scanf("Digite o valor a ser pesquisado: %d\n", &valorPesquisado);
     for(int i = 0; i < 50; i++)
     {
-        printf("[%d] ", vetC[i]); 
+        if (valorPesquisado == vetC[i]) {
+            printf("Número encontrado!\n");
+            printf("O número está na posição: %d", i);
+            flag = 1;
+        }else
+        {
+            printf("[%d]", vetC[i]);
+        }
     }
+
+    if (flag == 0) {
+        printf("Este número não consta no vetor\n");
+    }
+    
     return 0;
 }
 
