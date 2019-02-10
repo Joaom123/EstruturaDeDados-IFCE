@@ -8,8 +8,7 @@ vetor.
 #include<stdio.h>
 #include<stdlib.h>
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]){
     int vetAuxiliar[30] = {9,3,2,6,5
     ,12,23,36,65,54,
     98,68,57,35,37,
@@ -31,8 +30,9 @@ int main(int argc, char const *argv[])
 
     //Organizar o vetor em ordem crescente (Para aplicar a pesquisa binária)
     void quick(int vet[], int esq, int dir){
-        int pivo = esq, i,ch,j;         
-        for(i=esq+1;i<=dir;i++){        
+        
+        int pivo = esq, i, ch, j;         
+        for(i = esq+1; i <= dir; i++){        
             j = i;                      
             if(vet[j] < vet[pivo]){     
                 ch = vet[j];               
@@ -53,8 +53,6 @@ int main(int argc, char const *argv[])
     }
     quick(vet, 0, 29);
 
-
-
     //Executando uma pesquisa binária no vetor vet
     int limiteInferior = 0;
     int limiteSuperior = 30;
@@ -68,6 +66,7 @@ int main(int argc, char const *argv[])
         if (numeroPesquisado == vet[teste]) {
             printf("Número encontrado na posição: %d\n", teste);
             flag = 1;
+            break;
         }
         if (numeroPesquisado < vet[teste]) {
             limiteSuperior = teste - 1;
